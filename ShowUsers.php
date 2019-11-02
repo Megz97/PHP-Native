@@ -75,7 +75,7 @@ $allUsers=$db->fetchALL();
 									<?php
 									if(strtolower($_SESSION['Role'])==strtolower('admin') || $_SESSION['ID']==$user['ID'])
 									{ ?>
-										<a href="deleteUser.php?user=<?php echo $user['ID'] ?>"  >Delete</a>
+										<a onClick="javascript: return confirm('Please confirm deletion');" href="deleteUser.php?user=<?php echo $user['ID'] ?>"  >Delete</a>
 										<a href="EditUser.php?user=<?php echo $user['ID'] ?>">Edit</a>
 									<?php }
 

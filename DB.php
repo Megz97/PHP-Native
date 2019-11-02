@@ -62,7 +62,8 @@ class MysqlAdapter{
             $set[]=$field . '='. $this->quoteValue($value);
         }
         $set=implode(',',$set);
-        $query='update ' . $table . ' set ' . $set . ( ($where) ? 'where' . $where : '' );
+        $query='update ' . $table . ' set ' . $set . ( ($where) ? ' where ' . $where : '' );
+        echo $query;
         $this->query($query);
         return $this->getAffectedRows();
     }

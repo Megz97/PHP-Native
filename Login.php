@@ -21,6 +21,10 @@
 
 
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors',1);
+
 $errArray=[];
 require_once "check.php";
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
