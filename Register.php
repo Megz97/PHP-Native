@@ -50,17 +50,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       <hr>
 
   <label id="icon" for="name">Name</i></label>
-  <input type="text" name="Name" id="name" placeholder="Name" /><span><?php if (isset($errArray['Name'])) echo $errArray['Name'] ?></span>
+  <input type="text" name="Name" id="name" value="<?php echo $_POST['Name']?>" /><span><?php if (isset($errArray['Name'])) echo $errArray['Name'] ?></span>
   <label id="icon" for="name">Email</label>
-  <input type="text" name="Email" id="name" placeholder="Email" /><span><?php if (isset($errArray['Email'])) echo $errArray['Email'] ?></span>
+  <input type="text" name="Email" id="name" value="<?php echo $_POST['Email']?>" /><span><?php if (isset($errArray['Email'])) echo $errArray['Email'] ?></span>
   <label id="icon" for="name">Password</label>
   <input type="password" name="Password" id="name" placeholder="Password" /><span><?php if (isset($errArray['Password'])) echo $errArray['Password'] ?></span>
   <label id="icon" for="name">Photo</i></label>
   <input type="file" class="inputfile" name="Image" id="name" style="width: 105px;"><span><?php if (isset($errArray['Image'])) echo $errArray['Image'] ?></span>
   <div class="gender">
-    <input type="radio" value="male" id="male" name="Gender" checked/>
+    <input type="radio" value="male" id="male" name="Gender"  <?php if ($_POST['Gender']=='male') { ?> checked <?php } ?> />
     <label for="male" class="radio" chec>Male</label>
-    <input type="radio" value="female" id="female" name="Gender" />
+    <input type="radio" value="female" id="female" name="Gender"  <?php if ($_POST['Gender']=='female') { ?> checked <?php } ?> />
     <label for="female" class="radio">Female</label> 
    </div> 
 

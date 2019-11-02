@@ -12,7 +12,7 @@
 <!--===============================================================================================-->
 </head>
 <style>
-	a {
+	a.view {
 	font-size: 19px;
   font-weight: 600;
   color: white;
@@ -26,7 +26,7 @@
 }
 
 
-a:hover {
+a.view:hover {
 	top: 3px;
   cursor: pointer;
   background-color:#2e458b;
@@ -36,7 +36,7 @@ a:hover {
   
 }
 </style>
-<body>
+<body style="margin: auto;">
 
 <?php
 require_once "DB.php";
@@ -46,7 +46,18 @@ $db->select('users');
 $allUsers=$db->fetchALL();
 
 ?>
-	<div class="limiter">
+<div style="width: 100%;height: 80x;background-color: beige ;float: left; display: flex;">
+	<div> 
+		<img style="" src="<?php echo 'uploads/'.$_SESSION['Image']; ?>" alt="no Image" border=3 height=80 width=80> 
+	</div>
+	<div style="font-size: 28px; margin-top:15px ; margin-left: 10px ;font-family: 'Adobe Hebrew'"> <?php echo $_SESSION["Name"] ?>  
+	<br><a style="font-size: 20px;" href="Login.php">Logout</a>	
+	</div>
+</div>
+
+
+</div>
+	<div class="limiter" style="margin: auto;">
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<div class="table100">
@@ -75,8 +86,8 @@ $allUsers=$db->fetchALL();
 									<?php
 									if(strtolower($_SESSION['Role'])==strtolower('admin') || $_SESSION['ID']==$user['ID'])
 									{ ?>
-										<a onClick="javascript: return confirm('Please confirm deletion');" href="deleteUser.php?user=<?php echo $user['ID'] ?>"  >Delete</a>
-										<a href="EditUser.php?user=<?php echo $user['ID'] ?>">Edit</a>
+										<a class="view" onClick="javascript: return confirm('Please confirm deletion');" href="deleteUser.php?user=<?php echo $user['ID'] ?>"  >Delete</a>
+										<a class="view" href="EditUser.php?user=<?php echo $user['ID'] ?>">Edit</a>
 									<?php }
 
 									?>

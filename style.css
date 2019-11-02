@@ -46,7 +46,7 @@ html{
 .testbox {
   margin: 20px auto;
   margin-top: 5%;
-  width: 370px; 
+  width: 390px; 
   height: 464px; 
   -webkit-border-radius: 8px/7px; 
   -moz-border-radius: 8px/7px; 
@@ -139,7 +139,7 @@ input[type=file]{
 
 #icon {
   display: inline-block;
-  width: 80px;
+  width: 70px;
   height: 20px;
   background-color: #3a57af;
   padding: 8px 5px 5px 5px;

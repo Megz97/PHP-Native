@@ -36,7 +36,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       $_POST['Image']=$photoName;
       require_once "DB.php";
       $db=new MysqlAdapter();
-      print_r ($_POST);
       $db->update('users',$_POST,$query);
       header("Location: ShowUsers.php");
   }

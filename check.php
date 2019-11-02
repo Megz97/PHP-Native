@@ -6,8 +6,18 @@ require_once "DB.php";
 
 function checkForm($formData)
 {
-    $errArray=[];
+    $db=new MysqlAdapter();
 
+    if (sizeof($formData)>2){
+
+    $Email=$formData['Email'];
+    $query= 'Email='."'$Email'";
+    $db->select('users',$query);
+    
+    if($user=$db->fetch()){
+        $errArray['Email'] = "*Was used";
+    }
+}
     foreach ($formData as $key=>$value){
         if (isset($formData[$key]) && empty($formData[$key])) {
             $errArray[$key] = "*error";
